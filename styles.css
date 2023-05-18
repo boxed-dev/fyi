@@ -1,164 +1,97 @@
-/* styles.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
-
-/*=============== VARIABLES CSS ===============*/
+/* Reset default browser styles */
 
 :root {
-    --header-height: 3.5rem;
-    /*========== Colors ==========*/
     --hue: 14;
-    --first-color: hsl(var(--hue), 91%, 54%);
-    --first-color-alt: hsl(var(--hue), 91%, 50%);
     --title-color: hsl(var(--hue), 4%, 100%);
-    --text-color: hsl(var(--hue), 4%, 85%);
-    --text-color-light: hsl(var(--hue), 4%, 55%);
-    --body-color: hsl(210, 1%, 35%);
-    --container-color: hsl(0, 0%, 22%);
-    /*========== Font and typography ==========*/
-    --body-font: 'Poppins', sans-serif;
-    --biggest-font-size: 2rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem;
-    --smaller-font-size: .75rem;
-    /*========== Font weight ==========*/
-    --font-medium: 500;
-    --font-semi-bold: 600;
-    --font-black: 900;
-    /*========== Margenes Bottom ==========*/
-    --mb-0-25: .25rem;
-    --mb-0-5: .5rem;
-    --mb-0-75: .75rem;
-    --mb-1: 1rem;
-    --mb-1-5: 1.5rem;
-    --mb-2: 2rem;
-    --mb-2-5: 2.5rem;
-    /*========== z index ==========*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
-}
-
-@media screen and (min-width: 992px) {
-     :root {
-        --biggest-font-size: 4rem;
-        --h1-font-size: 2.25rem;
-        --h2-font-size: 1.5rem;
-        --h3-font-size: 1.25rem;
-        --normal-font-size: 1rem;
-        --small-font-size: .875rem;
-        --smaller-font-size: .813rem;
-    }
+    --first-color: hsl(var(--hue), 91%, 54%);
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
-::-webkit-scrollbar {
-    width: 0.6rem;
-    background: #413e3e;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #272525;
-    border-radius: .5rem;
-}
+/* Body styles */
 
 body {
-    font-family: var(--body-font);
-    background-color: var(--body-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #36393f;
+    font-family: Arial, sans-serif;
 }
+
+
+/* Container styles */
+
+.container {
+    width: 100%;
+    max-width: 300px;
+    /* Adjusted width for mobile */
+    padding: 20px;
+    background-color: #36393f;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Heading styles */
 
 h1 {
-    font-size: var(--h1-font-size);
-    color: var(--title-color);
+    color: #fff;
+    font-size: 24px;
     text-align: center;
-    margin-bottom: var(--mb-2);
+    margin-bottom: 20px;
 }
 
-form {
-    width: 90%;
-    /* Adjust the width as needed */
-    max-width: 300px;
-    /* Set a maximum width if desired */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--container-color);
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
-input[type="text"],
-input[type="password"] {
+/* Input styles */
+
+input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid var(--text-color-light);
-    border-radius: 5px;
+    background-color: #40444b;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
 }
 
-button[type="submit"] {
+
+/* Button styles */
+
+button {
     width: 100%;
     padding: 10px;
     background-color: var(--first-color);
     border: none;
-    color: var(--title-color);
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-bold);
-    border-radius: 5px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
     cursor: pointer;
+    background: #f04747;
 }
 
-button[type="submit"]:hover {
-    background-color: var(--first-color-alt);
-}
+
+/* Error message styles */
 
 #error-message {
-    text-align: center;
-    color: var(--first-color);
-    margin-bottom: var(--mb-1);
+    color: #f04747;
+    margin-top: 10px;
 }
 
 
-/* Responsive adjustments */
-
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 1.25rem;
-        margin-bottom: var(--mb-1);
-    }
-    form {
-        width: 90%;
-        max-width: 400px;
-    }
-}
+/* Responsive styles */
 
 @media screen and (max-width: 480px) {
-    h1 {
-        font-size: 1.125rem;
-        margin-bottom: var(--mb-0-75);
+    .container {
+        max-width: 100%;
+        border-radius: 0;
     }
-    form {
-        width: 90%;
-        max-width: 300px;
-        padding: 15px;
-    }
-    input[type="text"],
-    input[type="password"] {
-        padding: 8px;
-        margin-bottom: 8px;
-    }
-    button[type="submit"] {
-        padding: 8px;
-        font-size: var(--smaller-font-size);
+    body {
+        justify-content: flex-start;
     }
 }
