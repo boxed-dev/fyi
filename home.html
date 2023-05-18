@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="home-style.css">
-
+    <script>
+        var username = "";
+        var urlParams = new URLSearchParams(window.location.search);
+        username = urlParams.get('username');
+        if (username == null) {
+            window.location.href = "index.html";
+        }
+    </script>
     <title>Murder Mystery</title>
 </head>
 
 <body>
+
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">
@@ -68,7 +76,7 @@
 
                 <div class="home__data">
                     <h3 class="home__subtitle"></h3>
-                    <h1 class="home__title">Welcome <br> Noble Visitors <br></h1>
+                    <h1 class="home__title">Welcome To<br> Murder Mystery <br></h1>
                     <h4 class="home__description">
                         </p>To this digital stage,<br> Where mysteries unfold and crimes engage.</br> Enter, seekers of clues, both cunning and wise,<br> To solve the enigma that behind darkness lies.</br>
                         <br><br>
@@ -113,7 +121,7 @@
     <script src="auth.js"></script>
     <script>
         var urlParams = new URLSearchParams(window.location.search);
-        var username = urlParams.get('username');
+        username = urlParams.get('username');
         username = username.toUpperCase();
         document.getElementById('username-placeholder').textContent = username;
         document.getElementById('username-placeholde').textContent = username;
