@@ -86,7 +86,10 @@ h1 {
 }
 
 form {
-    width: 300px;
+    width: 90%;
+    /* Adjust the width as needed */
+    max-width: 300px;
+    /* Set a maximum width if desired */
     margin: 0 auto;
     padding: 20px;
     background-color: var(--container-color);
@@ -123,4 +126,39 @@ button[type="submit"]:hover {
     text-align: center;
     color: var(--first-color);
     margin-bottom: var(--mb-1);
+}
+
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.25rem;
+        margin-bottom: var(--mb-1);
+    }
+    form {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.125rem;
+        margin-bottom: var(--mb-0-75);
+    }
+    form {
+        width: 90%;
+        max-width: 300px;
+        padding: 15px;
+    }
+    input[type="text"],
+    input[type="password"] {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+    button[type="submit"] {
+        padding: 8px;
+        font-size: var(--smaller-font-size);
+    }
 }
