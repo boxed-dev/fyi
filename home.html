@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="home-style.css">
+
+    <title>Murder Mystery</title>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="img/logo.png" alt="" class="nav__logo-img">
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Home</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Stage 1</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#trick" class="nav__link">Stage 2</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#new" class="nav__link">Stage 3</a>
+                    </li>
+
+                    <p href="#" class="button button--ghost">Team -<span id="username-placeholde"></span></p>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <img src="img/nav-img.png" alt="" class="nav__img">
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt'></i>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section>
+            <div class="home__content grid">
+                <div class="home__group">
+                    <img src="img/home2-img.png" alt="" class="home__img">
+                    <div class="home__indicator"></div>
+
+                    <div class="home__details-img">
+                        <h4 class="home__details-title">Team - <span id="username-placeholder"></span></h4>
+                        <span class="home__details-subtitle">No words can describe them</span>
+                    </div>
+                </div>
+
+                <div class="home__data">
+                    <h3 class="home__subtitle"></h3>
+                    <h1 class="home__title">Welcome <br> Noble Visitors <br></h1>
+                    <h4 class="home__description">
+                        </p>To this digital stage,<br> Where mysteries unfold and crimes engage.</br> Enter, seekers of clues, both cunning and wise,<br> To solve the enigma that behind darkness lies.</br>
+                        <br><br>
+                        </p>
+
+                        <div class="home__buttons">
+                            <a href="#" class="button">Explore Now</a>
+                            <a href="#" class="button--link button--flex">See Leaderboard <i class='bx bx-right-arrow-alt button__icon'></i></a>
+                        </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        </section>
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                </div>
+                <div class="footer__content">
+                    <h3 class="footer__title">Our Services</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Creating Mysteries</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Calling Wizards</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <span class="footer__copy">&#169; FYI Tech Team</span>
+
+                <img src="img/footer1-img.png" alt="" class="footer__img-one">
+                <img src="img/footer2-img.png" alt="" class="footer__img-two">
+        </footer>
+    </main>
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+    </a>
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        var username = urlParams.get('username');
+        username = username.toUpperCase();
+        document.getElementById('username-placeholder').textContent = username;
+        document.getElementById('username-placeholde').textContent = username;
+    </script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
