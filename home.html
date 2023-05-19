@@ -13,6 +13,19 @@
         if (username == null) {
             window.location.href = "index.html";
         }
+        function decrypt(encryptedText) {
+            var randomValue = encryptedText.slice(-20);
+            var encryptedTextWithoutRandomValue = encryptedText.slice(0, -20);
+            
+            var decryptedText = '';
+            for (var i = 0; i < encryptedTextWithoutRandomValue.length; i += 2) {
+              var hexCode = encryptedTextWithoutRandomValue.substr(i, 2);
+              var charCode = parseInt(hexCode, 16);
+              decryptedText += String.fromCharCode(charCode);
+            }
+            
+            return decryptedText;
+}
     </script>
     <title>Murder Mystery</title>
 </head>
@@ -122,9 +135,9 @@
     <script>
         var urlParams = new URLSearchParams(window.location.search);
         username = urlParams.get('username');
-        username = username.toUpperCase();
-        document.getElementById('username-placeholder').textContent = username;
-        document.getElementById('username-placeholde').textContent = username;
+        username = decrypt(username).toUpperCase();
+        document.getElementById('username-placeholder').textContent = (username);
+        document.getElementById('username-placeholde').textContent = (username);
     </script>
 
     <script src="main.js"></script>

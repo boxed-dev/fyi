@@ -20,9 +20,34 @@ document.getElementById('signin-form').addEventListener('submit', function(event
     var email = username + "@solve.com";
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function() {
-            window.location.href = 'home.html?username=' + encodeURIComponent(username);
+            var nusername = encrypt(username)
+            window.location.href = 'home.html?username=' + encodeURIComponent(nusername);
         })
         .catch(function(error) {
             errorMessage.textContent = error.message;
         });
+        function encrypt(text) {
+            var encryptedText = '';
+            for (var i = 0; i < text.length; i++) {
+              var hexCode = text.charCodeAt(i).toString(16);
+              encryptedText += hexCode;
+            }
+            
+            var randomValue = generateRandomValue();
+            encryptedText += randomValue;
+            
+            return encryptedText;
+          }
+          
+          
+          
+          function generateRandomValue() {
+            var randomValue = '';
+            for (var i = 0; i < 20; i++) {
+              randomValue += Math.floor(Math.random() * 10);
+            }
+            return randomValue;
+          }
+          
+
 });
